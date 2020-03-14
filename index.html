@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Pacer - run tracker</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/pacer.css">
+</head>
+
+<body>
+    <div id="idle-view">
+        <div id="run-list-container">
+            <table id="run-list">
+            </table>
+        </div>
+        <div id="button-panel">
+            <div><button id="clear-all-button">Clear All</button> </div>
+            <div><button id="start-button">Start</button></div>
+        </div>
+    </div>
+    <div id="started-view" style="display:none">
+        <div id="run-time-display">
+            <div id="elapsed" class="center"></div>
+            <div id="distance" class="center"></div>
+            <div id="pace" class="center"></div>
+        </div>
+        <div id="button-panel">
+            <div><button id="split-button">Split</button></div>
+            <div><button id="stop-button">Stop</button></div>
+        </div>
+    </div>
+    <div id="run-view">
+        
+    </div>
+
+    <script src="js/geo-utils.js"></script>
+    <script src="js/format-utils.js"></script>
+    <script src="js/dom-utils.js"></script>
+    <script src="js/pacer-model.js"></script>
+    <script src="js/pacer-viewmodel.js"></script>
+    <script>
+        window.onload = function (evt) {
+            var pacerModel = new PacerModel();
+            var pacerViewModel = new PacerViewModel(pacerModel);
+        }
+    </script>
+</body>
+
+</html>
